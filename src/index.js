@@ -318,7 +318,10 @@ class PhoneInput extends React.Component {
     if (newSelectedCountry && newSelectedCountry.dialCode) {
       this.setState({
         selectedCountry: newSelectedCountry,
-        formattedNumber: this.props.disableCountryCode ? '' : this.formatNumber(newSelectedCountry.dialCode, newSelectedCountry),
+        formattedNumber: this.formatNumber(
+          this.props.disableCountryCode ? "" : newSelectedCountry.dialCode,
+          newSelectedCountry
+        ),
       });
     }
   }
